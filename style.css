@@ -1,0 +1,41 @@
+/* Custom CSS for Animations and Theme Colors */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Colors and Box Shadow */
+:root {
+    --neon-green: #39FF14;
+    --neon-blue: #00FFFF;
+    --neon-yellow: #FFFF00;
+}
+
+.text-neon-green { color: var(--neon-green); }
+.bg-neon-green { background-color: var(--neon-green); }
+.text-neon-yellow { color: var(--neon-yellow); }
+.bg-neon-blue { background-color: var(--neon-blue); }
+.shadow-neon-blue { box-shadow: 0 0 15px var(--neon-blue); }
+.focus\:ring-neon-green:focus { --tw-ring-color: var(--neon-green); }
+.focus\:ring-neon-blue:focus { --tw-ring-color: var(--neon-blue); }
+.font-roboto-mono { font-family: 'Roboto Mono', monospace; }
+
+/* Custom Pulse Animation for the Header */
+@keyframes pulse-slow {
+    0%, 100% { text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green), 0 0 15px var(--neon-green); }
+    50% { text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green); }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 3s infinite ease-in-out;
+}
+
+/* Custom fade-in for main content on load */
+main.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom spinner for loading state */
+#loading-indicator svg {
+    color: var(--neon-green);
+}
